@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features – Collaborative Calendar</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="./darkmodescript/dark.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <nav>
+        <a href="./showcalendar_inJS.php">Calendar</a>
+        <a href="./proposal.html">Proposal</a>
+        <a href="./features.html">Features</a>
+      </nav>
+
+      <button id="darkModeToggle">Toggle Dark Mode</button>
+      <body>
+        <header>
+            <h1>Features Document - Event Management System</h1>
+            <p>This document outlines the features of the Calendar App I created</p>
+        </header>
+    
+        <main>
+            <section>
+                <h2>Overview</h2>
+                <p>The system allows users to add events, view their calendar, and share events with family members. All features are working except sharing events and the admin page.</p>
+            </section>
+    
+            <section>
+                <h2>Front-End Features</h2>
+                <div>
+                    <h3>1. Event Creation </h3>
+                    <p><strong>Description:</strong> Users can create new events by filling in a form with event details (title, description, date, time).</p>
+                    <p><strong>Status:</strong> Working. The event is added to the calendar successfully, with validation ensuring that required fields (title, date, and time) are filled.</p>
+                </div>
+                <div>
+                    <h3>2. Event Display</h3>
+                    <p><strong>Description:</strong> Events are displayed in the user's calendar.</p>
+                    <p><strong>Status:</strong> Working. Events are shown correctly on the calendar after being added with accurate date, time, and title.</p>
+                </div>
+                <div>
+                    <h3>3. Share Event Checkbox</h3>
+                    <p><strong>Description:</strong> Users can select a checkbox to share an event with their family members.</p>
+                    <p><strong>Status:</strong> Working, but <strong>shared events functionality is currently not working</strong>. Although the checkbox allows event sharing, shared events are not being saved properly.</p>
+                </div>
+                <div>
+                    <h3>4. Family Member Dropdown</h3>
+                    <p><strong>Description:</strong> Users can select family members from a dropdown list when creating or sharing an event.</p>
+                    <p><strong>Status:</strong> Working. The dropdown populates with family members from the back-end, and users can select multiple family members to share the event with via Id.</p>
+                </div>
+            </section>
+    
+            <section>
+                <h2>Back-End Features</h2>
+                <div>
+                    <h3>1. User Authentication</h3>
+                    <p><strong>Description:</strong> Users must be authenticated to create events or view their calendar.</p>
+                    <p><strong>Status:</strong> Working. Users can log in and access their account. The system ensures that only logged-in users can access protected routes (event creation, calendar view).</p>
+                </div>
+                <div>
+                    <h3>2. Event Insertion</h3>
+                    <p><strong>Description:</strong> Events are stored in the database when a user creates them.</p>
+                    <p><strong>Status:</strong> Working. Events are successfully inserted into the `events` table.</p>
+                </div>
+                <div>
+                    <h3>3. Shared Events Insertion</h3>
+                    <p><strong>Description:</strong> If the user selects the option to share an event, it should be saved in the `shared_events` table.</p>
+                    <p><strong>Status:</strong> Not Working. Shared events are not being saved to the `shared_events` table despite the form submitting data for family members. Debugging required.</p>
+                </div>
+                <div>
+                    <h3>4. Family Connections</h3>
+                    <p><strong>Description:</strong> Family members who are connected and have an `approved` status are retrieved to show in the dropdown list.</p>
+                    <p><strong>Status:</strong> Working. The `family_connections` table is queried to fetch approved family members and display them in the front-end dropdown.</p>
+                </div>
+            </section>
+    
+            <section>
+                <h2>Issues and Next Steps</h2>
+                <div>
+                    <h3>1. Shared Events Not Saving</h3>
+                    <p><strong>Description:</strong> Shared events are not being saved into the `shared_events` table, even though the checkbox is checked and family members are selected.</p>
+                    <p><strong>Possible Causes:</strong> Seems to be an issue with data getting to the query, the query is correct when checked with phpmyadmin, however it is nonfunctional</p>
+                    <h4>Next Steps:</h4>
+                    <ul>
+                        <li>Verify query execution for inserting into the `shared_events` table.</li>
+                        <li>More styling, dark mode is functional but not the prettiest</li>
+                        <li>Currently trying to decide how to allow a parent to have control over a childs calendar</li>
+                    </ul>
+                    <h3>2. Implementation of methods to prevent users from overloading another with requests</h3>
+                    <h3>3. Implementation of a stats page for admin users</h3>
+                </div>
+            </section>
+        </main>
+    <script src="../homepage/script.js" ></script>
+    <script src="./darkmodescript/dark.js"></script>
+</body>
+</html>

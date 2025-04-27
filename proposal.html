@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Proposal- Collaborative Calendar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="./darkmodescript/dark.css">
+    </head>
+    <body>
+        <div id="navbar"></div>
+        <nav>
+            <a href="./about.html">About</a>
+            <a href="./showcalendar_inJS.php">Calendar</a>
+            <a href="./features.html">Features</a>
+          </nav>
+          <button id="darkModeToggle">Toggle Dark Mode</button>
+        <section id="proposal" style="max-width: 800px; margin: 2rem auto; font-family: Arial, sans-serif; line-height: 1.6;">
+            <h1 style="font-size: 2rem; border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;"> Collaborative Calendar Project Proposal</h1>
+          
+            <h2 style="font-size: 1.5rem; margin-top: 1.5rem;"> Developer</h2>
+            <p><strong>Mason Tate</strong> (Sole Developer)</p>
+          
+            <h2 style="font-size: 1.5rem; margin-top: 1.5rem;"> Project Overview</h2>
+            <p>
+              An interactive JavaScript calendar app that allows users to select custom months and years. The next development phase will introduce shared functionality—allowing family members or spouses to contribute to each other’s calendars, without deleting or modifying existing entries.
+            </p>
+          
+            <h2 style="font-size: 1.5rem; margin-top: 1.5rem;"> Features</h2>
+            <h3> Completed / Current</h3>
+            <ul>
+              <li>Dynamically renders monthly calendars with day-of-week alignment; meaning that the calendar will not have empty cells, this aligns with traditional calendars.</li>
+              <li>User selects year and month from dropdown menus</li>
+              <li>Manual date logic using vanilla JavaScript</li>
+              <li>Basic responsive structure (in progress)</li>
+            </ul>
+          
+            <h3 style="margin-top: 1rem;"> In Progress / Planned</h3>
+            <ul>
+              <li><strong>Family/Spouse Sharing:</strong> Users can view each other's calendars and add new events, but cannot delete others’ events</li>
+              <li>Addition of user profile logic, users can create their own profile to manage calendars, this profile can then approve family member requests (complete, need family integration)</li>
+              <li>Users recieve alerts for additions to calendars or new family member requests (50%, need family connections)</li>
+              <li>Event attribution (e.g., "Added by Mason") (complete)</li>
+              <li>Clickable dates to add events with title, time, and description (complete)</li>
+              <li>Dark Mode toggle for accessibility (complete)</li>
+              <li>Support for years beyond 2020 (complete)</li>
+              <li>Local event saving via <code>localStorage</code> (kinda complete, dark mode toggle is saved, need drafts to be saved)</li>
+              <li>Integration of users, events and an access table to manage all calendar data on the backend using MySQL (complete)</li>
+              <li>Admin dashboard to view stats</li>
+              <li>Some sort of security feature in place to prevent users from overloading anothers calendar, maybe limiting additions or making every addition ask for user approval</li>
+            </ul>
+          
+            <h2 style="font-size: 1.5rem; margin-top: 1.5rem;"> Target Users</h2>
+            <ul>
+              <li>Families, spouses, or roommates needing collaborative scheduling</li>
+              <li>Students and professionals who want simple, clean planners</li>
+              <li>Users who prefer minimal UI over cluttered commercial calendar apps</li>
+            </ul>
+          
+            <h2 style="font-size: 1.5rem; margin-top: 1.5rem;"> Tech Stack</h2>
+            <ul>
+              <li>HTML, CSS, JavaScript, PHP</li>
+              <li>Planned: <code>localStorage</code>, backend (MySQL or JSON files)</li>
+            </ul>
+          
+            <h2 style="font-size: 1.5rem; margin-top: 1.5rem;"> Unique Aspects</h2>
+            <ul>
+              <li>Custom-built date logic (including leap years, weekday matching)</li>
+              <li>No libraries or plugins—fully hand-coded</li>
+              <li>User-respectful design: Add-only permissions for shared calendars; users cannot remove any data from another users calendar</li>
+            </ul>
+          </section>
+          <script src="../homepage/script.js" ></script>
+          <script src="./darkmodescript/dark.js"></script>
+    </body>
+</html>
