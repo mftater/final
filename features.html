@@ -7,20 +7,22 @@
     <title>Features – Collaborative Calendar</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="./darkmodescript/dark.css">
+    <link rel="stylesheet" href="./calendar.css">
 </head>
 <body>
     <div id="navbar"></div>
-    <nav>
+    <nav class="second">
         <a href="./showcalendar_inJS.php">Calendar</a>
         <a href="./proposal.html">Proposal</a>
         <a href="./features.html">Features</a>
+        <a href="./adminstats.php">Manage Stats</a>
       </nav>
 
       <button id="darkModeToggle">Toggle Dark Mode</button>
       <body>
         <header>
             <h1>Features Document - Event Management System</h1>
-            <p>This document outlines the features of the Calendar App I created</p>
+            <p>This document outlines the features of the Calendar App I enhanced</p>
         </header>
     
         <main>
@@ -34,7 +36,7 @@
                 <div>
                     <h3>1. Event Creation </h3>
                     <p><strong>Description:</strong> Users can create new events by filling in a form with event details (title, description, date, time).</p>
-                    <p><strong>Status:</strong> Working. The event is added to the calendar successfully, with validation ensuring that required fields (title, date, and time) are filled.</p>
+                    <p><strong>Status:</strong> Working. The event is added to the calendar successfully, with validation ensuring that required fields are filled.</p>
                 </div>
                 <div>
                     <h3>2. Event Display</h3>
@@ -44,12 +46,17 @@
                 <div>
                     <h3>3. Share Event Checkbox</h3>
                     <p><strong>Description:</strong> Users can select a checkbox to share an event with their family members.</p>
-                    <p><strong>Status:</strong> Working, but <strong>shared events functionality is currently not working</strong>. Although the checkbox allows event sharing, shared events are not being saved properly.</p>
+                    <p><strong>Status:</strong> Working Events can be shared to Family members, currently no checks on this. Meaning: Family members can delete other family member events if shared.</p>
                 </div>
                 <div>
                     <h3>4. Family Member Dropdown</h3>
                     <p><strong>Description:</strong> Users can select family members from a dropdown list when creating or sharing an event.</p>
-                    <p><strong>Status:</strong> Working. The dropdown populates with family members from the back-end, and users can select multiple family members to share the event with via Id.</p>
+                    <p><strong>Status:</strong> Working. The dropdown populates with family members from the back-end, and users can select multiple family members to share the event with via username.</p>
+                </div>
+                <div>
+                    <h3>5. Admin Dashboard</h3>
+                    <p>Displays Statistics pertaining to events, families, and users</p>
+                    <p><strong>Status:</strong> Working. Graphs and data displaying as intended.</p>
                 </div>
             </section>
     
@@ -58,7 +65,7 @@
                 <div>
                     <h3>1. User Authentication</h3>
                     <p><strong>Description:</strong> Users must be authenticated to create events or view their calendar.</p>
-                    <p><strong>Status:</strong> Working. Users can log in and access their account. The system ensures that only logged-in users can access protected routes (event creation, calendar view).</p>
+                    <p><strong>Status:</strong> Working. Users can log in and access their account. The system ensures that only logged-in users can access.</p>
                 </div>
                 <div>
                     <h3>2. Event Insertion</h3>
@@ -68,24 +75,27 @@
                 <div>
                     <h3>3. Shared Events Insertion</h3>
                     <p><strong>Description:</strong> If the user selects the option to share an event, it should be saved in the `shared_events` table.</p>
-                    <p><strong>Status:</strong> Not Working. Shared events are not being saved to the `shared_events` table despite the form submitting data for family members. Debugging required.</p>
+                    <p><strong>Status:</strong> Working! Shared events are populated into share_events table, then appear for both users. However, there are no checks on this.</p>
                 </div>
                 <div>
                     <h3>4. Family Connections</h3>
                     <p><strong>Description:</strong> Family members who are connected and have an `approved` status are retrieved to show in the dropdown list.</p>
                     <p><strong>Status:</strong> Working. The `family_connections` table is queried to fetch approved family members and display them in the front-end dropdown.</p>
                 </div>
+                <div>
+                    <h3>5. Admin Dashboard</h3>
+                    <p>Displays Statistics pertaining to events, families, and users</p>
+                    <p><strong>Status:</strong> Working. Graphs and data displaying as intended.</p>
+                </div>
             </section>
     
             <section>
                 <h2>Issues and Next Steps</h2>
                 <div>
-                    <h3>1. Shared Events Not Saving</h3>
-                    <p><strong>Description:</strong> Shared events are not being saved into the `shared_events` table, even though the checkbox is checked and family members are selected.</p>
-                    <p><strong>Possible Causes:</strong> Seems to be an issue with data getting to the query, the query is correct when checked with phpmyadmin, however it is nonfunctional</p>
+                    <h4>Things that were not delivered: Security checks on addition and deletion of shared events, no way to draft events, or event approval for shared events</h4>
                     <h4>Next Steps:</h4>
                     <ul>
-                        <li>Verify query execution for inserting into the `shared_events` table.</li>
+                        <li>Add a system of checks and balances to shared events</li>
                         <li>More styling, dark mode is functional but not the prettiest</li>
                         <li>Currently trying to decide how to allow a parent to have control over a childs calendar</li>
                     </ul>

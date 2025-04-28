@@ -77,11 +77,6 @@ function calendar(date) {
 
   // Fetch events for the selected month and year
   $.get('fetch_events.php', { month: month + 1, year: year }, function (data) {
-        data.sort((a, b) => {
-          const timeA = a.event_time;
-          const timeB = b.event_time;
-          return timeA.localeCompare(timeB); 
-      });
       data.forEach(event => {
         //manually dice data up
           const [eventY, eventM, eventD] = event.event_date.split('-').map(Number);
@@ -153,7 +148,7 @@ $('#delete').on('click', function () {
     $('#event_att').val(username);
   
     // Show the modal
-    $('#eventtoggle').fadeIn();
+    $('#eventtoggle').fadeIn(200);
   });
 
 //share event toggle generates list of members
@@ -209,7 +204,7 @@ function getFamilyMembers() {
     data.forEach(function(member){
       var temp = document.createElement('option');
       temp.value = member.id;
-      temp.textContent = 'User ID: ' + member.user_id;
+      temp.textContent = 'Username: ' + member.username;
       family.appendChild(temp);
     }); 
   });

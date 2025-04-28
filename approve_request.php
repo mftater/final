@@ -7,20 +7,16 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 $user_id = $_SESSION['user_id'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['request_id']) && isset($_POST['action'])) {
     $request_id = $_POST['request_id'];
-    $action = $_POST['action'];
+    $confirm = $_POST['confirm'];
 
 
-    if ($action == "approve") {
+    if ($confirm == "approve") {
         $status = "approved";
-    } elseif ($action == "reject") {
+    } elseif ($confirm == "reject") {
         $status = "rejected";
     }
 
